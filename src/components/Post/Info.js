@@ -21,7 +21,7 @@ class Info extends React.Component {
 
     render(props) {
         const data = this.props.data
-        const imageLiked = this.state.liked ? "Unlike" : "Like"
+        const imageLiked = this.state.liked ? "Image-unliked" : "Image-liked"
         return (
             <div className="Image-info">
                 <div className="Image-title">
@@ -31,7 +31,7 @@ class Info extends React.Component {
                 <p>
                     {data.explanation}
                 </p>
-                <button className='Image-like-button' onClick={this.likeButtonClicked} >{imageLiked}</button>
+                <button className={imageLiked} onClick={this.likeButtonClicked}>Like</button>
             </div>
         )
     }

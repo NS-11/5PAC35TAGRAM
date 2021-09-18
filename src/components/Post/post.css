@@ -13,7 +13,7 @@
 
 .Image {
     border-radius: 10px;
-    margin: 30px;
+    margin: 10px;
     width: 400px;
     overflow: hidden;
     display: inline-block;
@@ -26,9 +26,20 @@
     object-fit: contain;
 }
 
-.Image-like-button {
+.Image-liked {
+    background-color: red;
+    width: 60px;
+    height: 30px;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+}
+
+.Image-unliked {
     background-color: black;
-    padding: 10px 20px 10px 20px;
+    width: 60px;
+    height: 30px;
     color: white;
     border-radius: 5px;
     border: none;

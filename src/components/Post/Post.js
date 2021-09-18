@@ -3,35 +3,19 @@ import Info from './Info'
 import './post.css'
 
 class Post extends React.Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
-            loading: false,
-            data: {}
+            loading: false
         }
     }
 
-    componentDidMount() {
-        const apiKey = "eelbSUjL8bvULwLgmemgCtWitsHoyrHH4gh6TOrm"
-
-        this.setState({loading: true})
-        fetch("https://api.nasa.gov/planetary/apod?api_key=" + apiKey)
-            .then(response => response.json())
-            .then(data => {
-                this.setState({
-                    loading: false,
-                    data: data
-                })
-
-            })
-    }
-
     render() {
-        const data = this.state.data
+        const post = this.props.post
         return (
             <div className="Image">
-                <img className='Image-image' src={data.url} alt="pic"/>
-                <Info data={data} />
+                <img className='Image-image' src={post.url} alt="pic"/>
+                <Info data={post} />
             </div>
         )
     }
