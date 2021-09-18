@@ -5,8 +5,10 @@ class Image extends React.Component {
         super()
         this.state = {
             loading: false,
-            data: {}
+            data: {},
+            liked: false
         }
+        this.likeButtonClicked = this.likeButtonClicked.bind(this)
     }
 
     componentDidMount() {
@@ -24,11 +26,26 @@ class Image extends React.Component {
             })
     }
 
+    likeButtonClicked() {
+        this.setState(prevState => {    
+            return {
+                liked: !prevState.liked
+            }
+            
+        })
+        
+    }
+
     render() {
+        const data = this.state.data
         const text = this.state.loading ? "loading..." : this.state.data.explanation
+        const imageLiked = this.state.liked ? "Unlike" : "Like"
         return (
             <div>
+                <img src={data.url} alt="image"/>
+                <p>{data.title} - {data.date}</p>
                 <p>{text}</p>
+                <button onClick={this.likeButtonClicked} >{imageLiked}</button>
             </div>
         )
     }
