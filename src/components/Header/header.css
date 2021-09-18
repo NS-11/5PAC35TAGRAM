@@ -1,0 +1,11 @@
+.Header {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    line-height: 10px;
+}
+
+.Header-image {
+    width: 200px;
+    padding: 50px;
+}

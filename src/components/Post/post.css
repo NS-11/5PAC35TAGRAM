@@ -1,0 +1,35 @@
+.Image-info {
+    background-color: white;
+    align-items: flex-start;
+    text-align: left;
+    font-size: small;
+    line-height: 20px;
+    padding: 30px;
+}
+
+.Image-title {
+    line-height: 2px;
+}
+
+.Image {
+    border-radius: 10px;
+    margin: 30px;
+    width: 400px;
+    overflow: hidden;
+    display: inline-block;
+    font-size: 0px;
+    line-height: 0px;
+}
+
+.Image-image {
+    width: 100%;
+    object-fit: contain;
+}
+
+.Image-like-button {
+    background-color: black;
+    padding: 10px 20px 10px 20px;
+    color: white;
+    border-radius: 5px;
+    border: none;
+}
