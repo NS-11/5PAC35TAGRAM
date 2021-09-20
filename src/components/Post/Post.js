@@ -12,10 +12,12 @@ class Post extends React.Component {
 
     render() {
         const post = this.props.post
+        // const media = { post.url.includes("youtube") ? <img className='Post-image' src={post.url} alt="pic"/> : <iframe width="420" height="315" src="https://www.youtube.com/embed/tgbNymZ7vqY"/>}
+
         return (
-            <div className="Image">
-                <img className='Image-image' src={post.url} alt="pic"/>
-                <Info data={post} />
+            <div className="Post">
+                <img className='Post-image' src={post.url} alt="pic"/>
+                <Info post={post} />
             </div>
         )
     }

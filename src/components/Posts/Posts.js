@@ -1,5 +1,7 @@
 import React from 'react'
-import Post from './Post/Post'
+import Post from '../Post/Post'
+import { PulseLoader } from 'react-spinners'
+import './posts.css'
 
 class Posts extends React.Component {
     constructor() {
@@ -28,9 +30,11 @@ class Posts extends React.Component {
     }
 
     render() {
+        const loading = this.state.loading ? <PulseLoader/> : ""
         const data = this.state.data.map((post, i) => <Post key={i} post={post}/>)
         return (
             <div>
+                {loading}
                 {data}
             </div>
         )

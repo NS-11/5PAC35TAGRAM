@@ -1,17 +1,18 @@
-.Image-info {
+.Post-info {
     background-color: white;
     align-items: flex-start;
     text-align: left;
     font-size: small;
     line-height: 20px;
     padding: 30px;
+
 }
 
-.Image-title {
-    line-height: 2px;
+.Post-title {
+    line-height: 1.2;
 }
 
-.Image {
+.Post {
     border-radius: 10px;
     margin: 10px;
     width: 400px;
@@ -19,9 +20,10 @@
     display: inline-block;
     font-size: 0px;
     line-height: 0px;
+    
 }
 
-.Image-image {
+.Post-image {
     width: 100%;
     object-fit: contain;
 }

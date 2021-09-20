@@ -1,4 +1,6 @@
 import React from "react"
+import { FiHeart } from 'react-icons/fi'
+import { FaHeart } from 'react-icons/fa';
 import './post.css'
 
 class Info extends React.Component {
@@ -20,18 +22,20 @@ class Info extends React.Component {
     }
 
     render(props) {
-        const data = this.props.data
-        const imageLiked = this.state.liked ? "Image-unliked" : "Image-liked"
+        const post = this.props.post
+        const imageLiked = this.state.liked ? <FaHeart size="30px" color="hotpink" onClick={this.likeButtonClicked}/> : <FiHeart size="30px" color="hotpink" onClick={this.likeButtonClicked}/>
         return (
-            <div className="Image-info">
-                <div className="Image-title">
-                    <h3>{data.title}</h3>
-                    <p>{data.date}</p>
+            <div className="Post-info">
+                <div className="Post-title">
+                        <h3>{post.title}</h3>
+                        <p>{post.date}</p>                    
                 </div>
                 <p>
-                    {data.explanation}
+                    {post.explanation}
                 </p>
-                <button className={imageLiked} onClick={this.likeButtonClicked}>Like</button>
+                <div>
+                {imageLiked}
+                </div>
             </div>
         )
     }
