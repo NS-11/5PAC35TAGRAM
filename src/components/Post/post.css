@@ -5,7 +5,12 @@
     font-size: small;
     line-height: 20px;
     padding: 30px;
+    transition: margin 1s;
 
+}
+
+.Post-header {
+    line-height: 2px;
 }
 
 .Post-title {
@@ -20,6 +25,7 @@
     display: inline-block;
     font-size: 0px;
     line-height: 0px;
+    vertical-align: top;
     
 }
 
@@ -28,21 +34,15 @@
     object-fit: contain;
 }
 
-.Image-liked {
-    background-color: red;
-    width: 60px;
-    height: 30px;
-    color: white;
-    border-radius: 5px;
-    border: none;
-    font-weight: bold;
+.Post-arrow {
+    text-align: center;
 }
 
-.Image-unliked {
-    background-color: black;
-    width: 60px;
-    height: 30px;
-    color: white;
-    border-radius: 5px;
-    border: none;
+.Post-heart {
+    color: hotpink;
+    font-size: 30px;
+}
+
+#Post-heart-like:hover {
+    fill: hotpink;
 }
