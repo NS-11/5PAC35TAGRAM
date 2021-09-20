@@ -1,8 +1,7 @@
 import React from "react"
 import { FiHeart } from 'react-icons/fi'
-import { FaHeart } from 'react-icons/fa';
-import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io/'
-import Bounce from 'react-reveal/Bounce'
+import { IoIosArrowUp } from 'react-icons/io/'
+import { Collapse } from "@material-ui/core"
 import './post.css'
 
 class Info extends React.Component {
@@ -35,6 +34,8 @@ class Info extends React.Component {
     render(props) {
         const post = this.props.post
         const { imageLiked, showDescription } = this.state
+        const heart = imageLiked ? "Post-heart-like" : ""
+        const rotated = showDescription ? "" : "rotated"
         
         return (
             <div className="Post-info">
@@ -43,15 +44,13 @@ class Info extends React.Component {
                         <p>{post.date}</p>                    
                 </div>
                 <br/>
-                {showDescription && <p>{post.explanation}</p>}
+                <Collapse in={showDescription}>
+                    <p>{post.explanation}</p>
+                </Collapse>
                 <div className="Post-arrow">
-                    {!showDescription && <IoIosArrowDown size="20px" onClick={this.arrowClicked}/>}
-                    {showDescription && <IoIosArrowUp size="20px" onClick={this.arrowClicked}/>}
+                    <IoIosArrowUp id={rotated} size="20px" onClick={this.arrowClicked}/>
                 </div>
-                {!imageLiked && <FiHeart id="Post-heart-like" className="Post-heart" onClick={this.likeButtonClicked}/>}
-                <Bounce when={imageLiked}>
-                    {imageLiked && <FaHeart className="Post-heart" onClick={this.likeButtonClicked}/>}
-                </Bounce>
+                <FiHeart id={heart} className="Post-heart" onClick={this.likeButtonClicked}/>
             </div>
         )
     }

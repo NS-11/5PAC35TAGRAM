@@ -1,3 +1,15 @@
+.Post {
+    border-radius: 10px;
+    margin: 10px;
+    width: 400px;
+    overflow: hidden;
+    display: inline-block;
+    font-size: 0px;
+    line-height: 0px;
+    vertical-align: top;
+    
+}
+
 .Post-info {
     background-color: white;
     align-items: flex-start;
@@ -17,18 +29,6 @@
     line-height: 1.2;
 }
 
-.Post {
-    border-radius: 10px;
-    margin: 10px;
-    width: 400px;
-    overflow: hidden;
-    display: inline-block;
-    font-size: 0px;
-    line-height: 0px;
-    vertical-align: top;
-    
-}
-
 .Post-image {
     width: 100%;
     object-fit: contain;
@@ -36,6 +36,10 @@
 
 .Post-arrow {
     text-align: center;
+}
+
+#rotated {
+    transform: rotate(180deg);
 }
 
 .Post-heart {
@@ -46,3 +50,29 @@
 #Post-heart-like:hover {
     fill: hotpink;
 }
+
+#Post-heart-like {
+    fill: hotpink;
+    animation: heartbeat 0.75s;
+}
+
+/* Inspired from https://stackoverflow.com/questions/34762009/pulsing-heart-css-animation */
+@keyframes heartbeat {
+  0% {
+    transform: scale( .75 );
+  }
+  
+  33% {
+    transform: scale( 1 );
+  }
+  
+  66% {
+    transform: scale( .75 );
+  }
+  
+  100% {
+    transform: scale( 1 );
+  }
+}
+
+
