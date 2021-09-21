@@ -1,10 +1,11 @@
 import React from "react"
-import { FiHeart } from 'react-icons/fi'
-import { IoIosArrowUp } from 'react-icons/io/'
 import { Collapse } from "@material-ui/core"
-import './post.css'
+import { FiHeart } from "react-icons/fi"
+import { IoIosArrowUp } from "react-icons/io/"
+import "../styles/Post.css"
 
-class Info extends React.Component {
+// INFO OF A POST 
+class PostInfo extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -43,17 +44,21 @@ class Info extends React.Component {
                         <h3 className="Post-title">{post.title}</h3>
                         <p>{post.date}</p>                    
                 </div>
+
                 <br/>
+
                 <Collapse in={showDescription}>
                     <p>{post.explanation}</p>
                 </Collapse>
+
                 <div className="Post-arrow">
                     <IoIosArrowUp id={rotated} size="20px" onClick={this.arrowClicked}/>
                 </div>
+
                 <FiHeart id={heart} className="Post-heart" onClick={this.likeButtonClicked}/>
             </div>
         )
     }
 }
 
-export default Info
+export default PostInfo

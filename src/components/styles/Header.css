@@ -1,0 +1,26 @@
+.Header {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    line-height: 1px;
+    margin-left: 40px;
+}
+
+.Header-image {
+    width: 200px;
+    padding: 50px;
+}
+
+.Header-subtitle {
+    font-size: larger;
+    line-height: 1;
+}
+
+.Header-message {
+    font-size: large;
+    color: rgb(179, 19, 8);
+    font-family: monospace;
+    font-weight: bold;
+    line-height: 1;
+}
+

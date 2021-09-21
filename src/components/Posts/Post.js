@@ -1,6 +1,6 @@
-import React from 'react'
-import Info from './Info'
-import './post.css'
+import React from "react"
+import Info from "./PostInfo"
+import "../styles/Post.css"
 
 class Post extends React.Component {
     constructor(props) {
@@ -12,11 +12,13 @@ class Post extends React.Component {
 
     render() {
         const post = this.props.post
-        // const media = { post.url.includes("youtube") ? <img className='Post-image' src={post.url} alt="pic"/> : <iframe width="420" height="315" src="https://www.youtube.com/embed/tgbNymZ7vqY"/>}
+        const media = post.media_type === "video" ? 
+            <iframe title="video" width="400px" src={post.url}/> : 
+            <img className="Post-image" src={post.url} alt={post.url}/>
 
         return (
             <div className="Post">
-                <img className='Post-image' src={post.url} alt="pic"/>
+                {media}
                 <Info post={post} />
             </div>
         )
